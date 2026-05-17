@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projet Dëgg-Sport — ONADS | Syness Conseil Stratégique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --blue: #0F2C59;
+    --blue-mid: #1A3F7A;
+    --blue-light: #E8EEF7;
+    --green: #00A86B;
+    --green-light: #E6F7F1;
+    --gold: #FFB800;
+    --gold-light: #FFF8E1;
+    --white: #F8FAFC;
+    --text: #1E293B;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --bg-zebra: #F1F5F9;
+    --red: #DC2626;
+    --red-light: #FEE2E2;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  @media print {
+    body { background: white; }
+    .page-break { page-break-before: always; }
+    header { position: static; }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ====== HEADER ====== */
+  header {
+    background: var(--blue);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(15,44,89,0.4);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 40px;
+    display: table;
+    width: 100%;
+  }
+
+  .header-left {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .header-right {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  .header-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    line-height: 1;
+  }
+
+  .header-logo span {
+    color: var(--gold);
+  }
+
+  .header-tagline {
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .header-project {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .header-client {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ====== COVER PAGE ====== */
+  .cover {
+    background: linear-gradient(135deg, var(--blue) 0%, #0a1f40 60%, #061428 100%);
+    color: white;
+    min-height: 520px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-bg-lines {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.06;
+  }
+
+  .cover-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--blue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  .cover-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: white;
+    margin: 0 0 8px;
+  }
+
+  .cover-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 36px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin-bottom: 36px;
+    border-radius: 2px;
+  }
+
+  .cover-meta-table {
+    display: table;
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+  }
+
+  .cover-meta-row {
+    display: table-row;
+  }
+
+  .cover-meta-label {
+    display: table-cell;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 8px 30px 8px 0;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  .cover-meta-value {
+    display: table-cell;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    padding: 8px 0;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .cover-strip {
+    background: var(--gold);
+    height: 6px;
+  }
+
+  /* ====== MAIN LAYOUT ====== */
+  .doc-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* ====== SECTION ====== */
+  .section {
+    margin-bottom: 64px;
+  }
+
+  .section-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--blue);
+    margin: 0 0 4px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    font-style: italic;
+  }
+
+  .subsection-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--blue);
+    margin: 36px 0 14px;
+    padding-left: 14px;
+    border-left: 4px solid var(--gold);
+    line-height: 1.3;
+  }
+
+  /* ====== KPI GRID ====== */
+  .kpi-grid {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 16px;
+    margin: 0 -16px 32px;
+  }
+
+  .kpi-row {
+    display: table-row;
+  }
+
+  .kpi-card {
+    display: table-cell;
+    width: 25%;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+
+  .kpi-card.kpi-blue::before { background: var(--blue); }
+  .kpi-card.kpi-green::before { background: var(--green); }
+  .kpi-card.kpi-gold::before { background: var(--gold); }
+  .kpi-card.kpi-teal::before { background: #0891B2; }
+
+  .kpi-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: table;
+    margin-bottom: 16px;
+  }
+
+  .kpi-icon.blue { background: var(--blue-light); }
+  .kpi-icon.green { background: var(--green-light); }
+  .kpi-icon.gold { background: var(--gold-light); }
+  .kpi-icon.teal { background: #E0F2FE; }
+
+  .kpi-icon svg {
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+  }
+
+  .kpi-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .kpi-card.kpi-blue .kpi-value { color: var(--blue); }
+  .kpi-card.kpi-green .kpi-value { color: var(--green); }
+  .kpi-card.kpi-gold .kpi-value { color: var(--gold); }
+  .kpi-card.kpi-teal .kpi-value { color: #0891B2; }
+
+  .kpi-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .kpi-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ====== CALLOUT BOX ====== */
+  .callout {
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-left: 5px solid;
+  }
+
+  .callout-blue {
+    background: var(--blue-light);
+    border-color: var(--blue);
+  }
+
+  .callout-green {
+    background: var(--green-light);
+    border-color: var(--green);
+  }
+
+  .callout-gold {
+    background: var(--gold-light);
+    border-color: var(--gold);
+  }
+
+  .callout-red {
+    background: var(--red-light);
+    border-color: var(--red);
+  }
+
+  .callout-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .callout-blue .callout-title { color: var(--blue); }
+  .callout-green .callout-title { color: var(--green); }
+  .callout-gold .callout-title { color: #B45309; }
+  .callout-red .callout-title { color: var(--red); }
+
+  .callout p { margin: 0; font-size: 13px; }
+
+  /* ====== TABLES ====== */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 32px;
+    font-size: 13px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table thead tr {
+    background: var(--blue);
+    color: white;
+  }
+
+  .data-table thead th {
+    padding: 14px 18px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .data-table tbody tr:nth-child(odd) {
+    background: white;
+  }
+
+  .data-table tbody tr:nth-child(even) {
+    background: var(--bg-zebra);
+  }
+
+  .data-table tbody tr:hover {
+    background: var(--blue-light);
+  }
+
+  .data-table tbody td {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .data-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ====== RACI BADGES ====== */
+  .badge {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 36px;
+  }
+
+  .badge-A {
+    background: #FEF3C7;
+    color: #92400E;
+    border: 1.5px solid #F59E0B;
+  }
+
+  .badge-R {
+    background: var(--green-light);
+    color: #065F46;
+    border: 1.5px solid var(--green);
+  }
+
+  .badge-C {
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1.5px solid #93C5FD;
+  }
+
+  .badge-I {
+    background: #F1F5F9;
+    color: #64748B;
+    border: 1.5px solid #CBD5E1;
+  }
+
+  /* ====== CRITICALITY PILLS ====== */
+  .pill {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 3px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .pill-high {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1.5px solid #FCA5A5;
+  }
+
+  .pill-max {
+    background: #450A0A;
+    color: #FCA5A5;
+    border: 1.5px solid #991B1B;
+  }
+
+  /* ====== SWOT ====== */
+  .swot-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+  }
+
+  .swot-row {
+    display: table-row;
+  }
+
+  .swot-cell {
+    display: table-cell;
+    width: 50%;
+    padding: 28px 30px;
+    vertical-align: top;
+  }
+
+  .swot-cell-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .swot-s { background: #0F2C59; color: white; }
+  .swot-s .swot-cell-title { color: var(--gold); }
+  .swot-w { background: #F8FAFC; color: var(--text); border: 1px solid var(--border); }
+  .swot-w .swot-cell-title { color: var(--red); }
+  .swot-o { background: var(--green-light); color: var(--text); border: 1px solid #A7F3D0; }
+  .swot-o .swot-cell-title { color: var(--green); }
+  .swot-t { background: var(--gold-light); color: var(--text); border: 1px solid #FDE68A; }
+  .swot-t .swot-cell-title { color: #92400E; }
+
+  .swot-cell ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .swot-cell ul li {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ====== MODULES GRID ====== */
+  .modules-grid {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 16px;
+    margin: 0 -16px 32px;
+  }
+
+  .modules-row {
+    display: table-row;
+  }
+
+  .module-card {
+    display: table-cell;
+    width: 25%;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 22px;
+    vertical-align: top;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--border);
+    position: absolute;
+    top: 16px;
+    right: 18px;
+  }
+
+  .module-tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  .module-tag-blue { background: var(--blue); color: white; }
+  .module-tag-green { background: var(--green); color: white; }
+  .module-tag-gold { background: var(--gold); color: var(--blue); }
+  .module-tag-teal { background: #0891B2; color: white; }
+
+  .module-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    min-height: 36px;
+  }
+
+  .module-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ====== FUNDING MODEL ====== */
+  .funding-grid {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 16px;
+    margin: 0 -16px 32px;
+  }
+
+  .funding-row {
+    display: table-row;
+  }
+
+  .funding-card {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    border-radius: 10px;
+    padding: 30px 26px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .funding-card-g2g {
+    background: var(--blue);
+    color: white;
+  }
+
+  .funding-card-b2b {
+    background: var(--green);
+    color: white;
+  }
+
+  .funding-card-ppp {
+    background: #1E293B;
+    color: white;
+  }
+
+  .funding-card-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  .funding-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .funding-card-g2g .funding-card-title { color: var(--gold); }
+  .funding-card-b2b .funding-card-title { color: #ECFDF5; }
+  .funding-card-ppp .funding-card-title { color: var(--gold); }
+
+  .funding-item {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .funding-bullet {
+    display: table-cell;
+    width: 20px;
+    vertical-align: top;
+    padding-top: 2px;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+  }
+
+  .funding-text {
+    display: table-cell;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  /* ====== TIMELINE / ROADMAP ====== */
+  .roadmap-container {
+    margin: 20px 0 36px;
+    position: relative;
+  }
+
+  .roadmap-track {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .roadmap-phase {
+    display: table-cell;
+    width: 33.33%;
+    padding: 0 10px 0 0;
+    vertical-align: top;
+  }
+
+  .roadmap-phase:last-child { padding-right: 0; }
+
+  .roadmap-header {
+    border-radius: 6px 6px 0 0;
+    padding: 14px 20px;
+    position: relative;
+  }
+
+  .roadmap-phase:nth-child(1) .roadmap-header { background: var(--blue); }
+  .roadmap-phase:nth-child(2) .roadmap-header { background: var(--blue-mid); }
+  .roadmap-phase:nth-child(3) .roadmap-header { background: var(--green); }
+
+  .roadmap-phase-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    line-height: 1;
+  }
+
+  .roadmap-phase-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+
+  .roadmap-phase-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    line-height: 1.3;
+  }
+
+  .roadmap-body {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 20px;
+    min-height: 180px;
+  }
+
+  .roadmap-item {
+    display: table;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .roadmap-dot {
+    display: table-cell;
+    width: 28px;
+    vertical-align: top;
+    padding-top: 4px;
+  }
+
+  .roadmap-dot-inner {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+  }
+
+  .roadmap-phase:nth-child(1) .roadmap-dot-inner { border-color: var(--blue); background: var(--blue-light); }
+  .roadmap-phase:nth-child(2) .roadmap-dot-inner { border-color: var(--blue-mid); background: #EEF2FF; }
+  .roadmap-phase:nth-child(3) .roadmap-dot-inner { border-color: var(--green); background: var(--green-light); }
+
+  .roadmap-item-text {
+    display: table-cell;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  /* ====== STAKEHOLDER MATRIX ====== */
+  .stakeholder-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .stakeholder-row { display: table-row; }
+
+  .stakeholder-cell {
+    display: table-cell;
+    width: 50%;
+    padding: 28px 30px;
+    vertical-align: top;
+    border: 1px solid var(--border);
+  }
+
+  .stakeholder-cell-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .stakeholder-zone {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding: 3px 10px;
+    display: inline-block;
+    border-radius: 3px;
+  }
+
+  .zone-high-high { background: var(--blue); color: white; }
+  .zone-high-low { background: var(--blue-light); color: var(--blue); }
+  .zone-low-high { background: var(--green-light); color: #065F46; }
+  .zone-low-low { background: var(--bg-zebra); color: var(--text-muted); }
+
+  .stakeholder-cell ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+  }
+
+  .stakeholder-cell ul li {
+    font-size: 12.5px;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+  }
+
+  /* ====== ISHIKAWA ====== */
+  .ishikawa-container {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 40px 30px;
+    margin: 20px 0 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ishikawa-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--blue);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .ishikawa-layout {
+    position: relative;
+  }
+
+  /* SVG-based Ishikawa */
+  .ishikawa-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ====== FOOTER ====== */
+  .doc-footer {
+    background: var(--blue);
+    color: rgba(255,255,255,0.5);
+    padding: 24px 40px;
+    margin-top: 60px;
+  }
+
+  .doc-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: table;
+    width: 100%;
+  }
+
+  .doc-footer-left {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .doc-footer-right {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  .doc-footer p {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ====== MISC ====== */
+  p {
+    margin: 0 0 14px;
+    font-size: 13.5px;
+    line-height: 1.75;
+  }
+
+  ul, ol {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+
+  ul li, ol li {
+    margin-bottom: 6px;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .raci-legend {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 10px 0;
+    margin-top: 16px;
+  }
+
+  .raci-legend-item {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--blue) 0%, #1a3f7a 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 32px 36px;
+    margin: 24px 0 36px;
+  }
+
+  .highlight-box p {
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .highlight-box-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .two-col {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 24px;
+    margin: 0 -24px 24px;
+  }
+
+  .two-col-left,
+  .two-col-right {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .pestel-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .pestel-row { display: table-row; }
+
+  .pestel-cell {
+    display: table-cell;
+    padding: 16px 20px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    width: 33.33%;
+  }
+
+  .pestel-cell:nth-child(3n) { border-right: none; }
+  .pestel-row:last-child .pestel-cell { border-bottom: none; }
+
+  .pestel-letter {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .pestel-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+  }
+
+  .pestel-text { font-size: 12px; color: var(--text); line-height: 1.5; }
+
+  .pestel-p .pestel-letter { color: var(--blue); }
+  .pestel-e .pestel-letter { color: var(--green); }
+  .pestel-s .pestel-letter { color: #7C3AED; }
+  .pestel-t .pestel-letter { color: #0891B2; }
+  .pestel-en .pestel-letter { color: #16A34A; }
+  .pestel-l .pestel-letter { color: var(--red); }
+
+  /* footer contacts spécifiques */
+  .footer-contacts {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 11px;
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="header-logo">Syness<span>.</span></div>
+      <div class="header-tagline">Conseil Stratégique &amp; Transformation Digitale</div>
+    </div>
+    <div class="header-right">
+      <div class="header-project">Projet : Dëgg-Sport</div>
+      <div class="header-client">ONADS — Organisation Nationale Antidopage du Sénégal</div>
+    </div>
+  </div>
+</header>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <svg class="cover-bg-lines" viewBox="0 0 1100 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="100" x2="1100" y2="100" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1100" y2="200" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="1100" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="1100" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="520" stroke="white" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="520" stroke="white" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="520" stroke="white" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="520" stroke="white" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="520" stroke="white" stroke-width="0.5"/>
+    <circle cx="900" cy="260" r="200" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="900" cy="260" r="140" stroke="white" stroke-width="0.5" fill="none"/>
+    <circle cx="900" cy="260" r="80" stroke="white" stroke-width="0.5" fill="none"/>
+  </svg>
+  <div class="cover-inner">
+    <div class="cover-badge">Plan Directeur de Conseil Stratégique — Standard Big 4</div>
+    <h1 class="cover-title">Dëgg-Sport</h1>
+    <p class="cover-subtitle">Super-App Intégrée 4-in-1 pour la Modernisation<br>et la Transformation Digitale de l'ONADS</p>
+    <div class="cover-divider"></div>
+    <div class="cover-meta-table">
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Destinataire</div>
+        <div class="cover-meta-value">Direction Exécutive et Conseil d'Administration — ONADS</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Objet</div>
+        <div class="cover-meta-value">Modernisation &amp; Transformation Digitale face aux Échéances Nationales et Internationales</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Référence</div>
+        <div class="cover-meta-value">SYNESS / ONADS / 2026 — JOJ Dakar — V1.0</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Statut</div>
+        <div class="cover-meta-value" style="color:#FFB800;">Confidentiel — Pour Décision Exécutive</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cover-strip"></div>
+
+<!-- DOCUMENT BODY -->
+<div class="doc-body">
+
+  <!-- ====== SECTION 1: EXECUTIVE SUMMARY ====== -->
+  <div class="section">
+    <div class="section-number">Section 01</div>
+    <h2 class="section-title">Executive Summary</h2>
+    <p class="section-subtitle">Résumé Décisionnel — Synthèse de la proposition stratégique à l'intention des décideurs</p>
+
+    <p>L'Organisation Nationale Antidopage du Sénégal (ONADS) aborde un <strong>tournant historique</strong> de son existence. À l'approche des Jeux Olympiques de la Jeunesse (JOJ) Dakar 2026 et dans un écosystème sportif local marqué par l'explosion de l'économie de la Lutte avec frappe et la professionnalisation du football, l'institution fait face à une triple exigence : une conformité absolue aux standards de l'Agence Mondiale Antidopage (AMA), une efficacité terrain accrue malgré un modèle basé sur le bénévolat d'experts, et une gestion infaillible du risque juridique.</p>
+
+    <div class="callout callout-red">
+      <div class="callout-title">⚠ Signal d'Alerte Critique</div>
+      <p>La récente annulation par le Tribunal Arbitral du Sport (TAS) de sanctions majeures pour <strong>vice de forme procédural</strong> rappelle à quel point la sécurisation des contrôles est devenue une urgence nationale, tant sur le plan sportif que diplomatique.</p>
+    </div>
+
+    <p>Le présent document propose le déploiement de la <strong>Super-App ONADS Dëgg-Sport</strong>, une solution souveraine Mobile-First / PWA (Progressive Web App) consolidant quatre briques fondamentales en une interface unique à profils d'accès étanches, sans contrainte de téléchargement sur les stores officiels.</p>
+
+    <div class="subsection-title">Indicateurs Clés de Performance (KPI) — Cibles du Projet</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-row">
+        <div class="kpi-card kpi-blue">
+          <div class="kpi-icon blue">
+            <svg width="24" height="24" fill="none" stroke="#0F2C59" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="kpi-value">Zéro</div>
+          <div class="kpi-label">Vice de Forme</div>
+          <div class="kpi-desc">Zéro vice de forme sur les PV dématérialisés dès la 1ère année grâce au guidage algorithmique de l'agent.</div>
+        </div>
+        <div class="kpi-card kpi-green">
+          <div class="kpi-icon green">
+            <svg width="24" height="24" fill="none" stroke="#00A86B" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="kpi-value">100%</div>
+          <div class="kpi-label">Sportifs Équipés</div>
+          <div class="kpi-desc">100% des sportifs de haut niveau et des écuries de lutte dotés d'un accès direct à l'outil de prévention linguistique (Français / Wolof).</div>
+        </div>
+        <div class="kpi-card kpi-gold">
+          <div class="kpi-icon gold">
+            <svg width="24" height="24" fill="none" stroke="#B45309" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="kpi-value">-85%</div>
+          <div class="kpi-label">Délais AUT</div>
+          <div class="kpi-desc">Réduction de 85% des délais de traitement des demandes d'Autorisation d'Usage à des Fins Thérapeutiques.</div>
+        </div>
+        <div class="kpi-card kpi-teal">
+          <div class="kpi-icon teal">
+            <svg width="24" height="24" fill="none" stroke="#0891B2" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="kpi-value">Hybride</div>
+          <div class="kpi-label">Modèle Financier</div>
+          <div class="kpi-desc">Autofinancement à moyen terme via fonds de l'héritage Dakar 2026, partenariats éthiques industriels et licences de conformité.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-blue">
+      <div class="callout-title">💡 Concept Technologique Clé : PWA Mobile-First</div>
+      <p>Conçue selon une approche <strong>Mobile-First / PWA (Progressive Web App)</strong> pour s'affranchir des contraintes de téléchargement. L'accès s'effectue via un QR code présent sur les licences sportives — légèreté optimale, accessibilité maximale sur l'ensemble du territoire national.</p>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 2: CONTEXTE STRATÉGIQUE ====== -->
+  <div class="section page-break">
+    <div class="section-number">Section 02</div>
+    <h2 class="section-title">Contexte Stratégique &amp; Enjeux Nationaux</h2>
+    <p class="section-subtitle">Strategic Alignment — Analyse macro-environnementale et positionnement institutionnel</p>
+
+    <div class="subsection-title">2.1 — Analyse PESTEL : Environnement Macro-Sénégalais</div>
+
+    <div class="pestel-grid">
+      <div class="pestel-row">
+        <div class="pestel-cell pestel-p">
+          <div class="pestel-letter">P</div>
+          <div class="pestel-label">Politique</div>
+          <div class="pestel-text">Volonté réaffirmée du Ministère de la Jeunesse et des Sports de faire des JOJ Dakar 2026 un modèle d'organisation continental. La lutte contre la tricherie est hissée au rang de priorité pour l'image diplomatique du Sénégal.</div>
+        </div>
+        <div class="pestel-cell pestel-e">
+          <div class="pestel-letter">E</div>
+          <div class="pestel-label">Économique</div>
+          <div class="pestel-text">Budgets internes historiquement limités, dépendant des subventions étatiques et du CNOSS. Le sport professionnel — cachets de lutte atteignant des dizaines de millions de FCFA — réclame des mécanismes de protection des investissements des promoteurs.</div>
+        </div>
+        <div class="pestel-cell pestel-s">
+          <div class="pestel-letter">S</div>
+          <div class="pestel-label">Social</div>
+          <div class="pestel-text">Barrières culturelles liées aux pratiques mystiques et compléments traditionnels. Coexistence de sportifs académiques de profil mondial avec des athlètes traditionnels pour lesquels le français n'est pas la langue de travail.</div>
+        </div>
+      </div>
+      <div class="pestel-row">
+        <div class="pestel-cell pestel-t">
+          <div class="pestel-letter">T</div>
+          <div class="pestel-label">Technologique</div>
+          <div class="pestel-text">Pénétration majeure du smartphone et de l'usage des données mobiles au Sénégal. L'écosystème numérique national (porté par le succès des fintechs locales) démontre une appétence forte des populations pour les solutions applicatives épurées.</div>
+        </div>
+        <div class="pestel-cell pestel-en">
+          <div class="pestel-letter">E</div>
+          <div class="pestel-label">Environnemental</div>
+          <div class="pestel-text">Entrée en vigueur du nouveau Code du Sport du Sénégal qui durcit l'encadrement médical. Alignement requis sur le cadre légal sportif national et les standards de gouvernance internationale de l'AMA.</div>
+        </div>
+        <div class="pestel-cell pestel-l">
+          <div class="pestel-letter">L</div>
+          <div class="pestel-label">Légal</div>
+          <div class="pestel-text">Strict alignement requis sur les exigences de la Commission de Protection des Données Personnelles (CDP) du Sénégal concernant les données sensibles de santé des athlètes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-title">2.2 — Synthèse Stratégique : Matrice SWOT</div>
+
+    <div class="swot-grid">
+      <div class="swot-row">
+        <div class="swot-cell swot-s">
+          <span class="swot-cell-title">Forces — Strengths</span>
+          <ul>
+            <li>Institution reconnue et agréée par l'Agence Mondiale Antidopage (AMA)</li>
+            <li>Équipe pluridisciplinaire d'experts et de médecins hautement qualifiés travaillant en commissions dédiées</li>
+            <li>Légitimité institutionnelle forte auprès des fédérations sportives nationales</li>
+          </ul>
+        </div>
+        <div class="swot-cell swot-w">
+          <span class="swot-cell-title">Faiblesses — Weaknesses</span>
+          <ul>
+            <li>Dépendance au bénévolat (une quarantaine d'experts à temps partiel)</li>
+            <li>Traçabilité papier vulnérable aux erreurs humaines et aux vices de forme</li>
+            <li>Absence de bases de données intégrées sur la pharmacopée vendue au Sénégal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="swot-row">
+        <div class="swot-cell swot-o">
+          <span class="swot-cell-title">Opportunités — Opportunities</span>
+          <ul>
+            <li>Échéance des JOJ Dakar 2026 agissant comme accélérateur de financement international</li>
+            <li>Dynamique d'harmonisation active avec l'AFLD (accord de coopération signé)</li>
+            <li>Écosystème mobile sénégalais mature et réceptif aux solutions digitales</li>
+          </ul>
+        </div>
+        <div class="swot-cell swot-t">
+          <span class="swot-cell-title">Menaces — Threats</span>
+          <ul>
+            <li>Multiplication des contentieux devant le TAS en cas d'irrégularité des contrôles</li>
+            <li>Crise de réputation internationale si un athlète sénégalais est contrôlé positif lors des JOJ faute d'information préventive</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-title">2.3 — Benchmark International</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Organisation</th>
+          <th>Pays</th>
+          <th>Dispositif Technologique Déployé</th>
+          <th>Enseignements pour l'ONADS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AFLD</strong></td>
+          <td>France 🇫🇷</td>
+          <td>Applications de terrain interconnectées avec les laboratoires de Châtenay-Malabry. Saisie des données de contrôle en temps réel sur tablette sécurisée.</td>
+          <td>Suppression totale des délais d'instruction par digitalisation complète de la chaîne de contrôle.</td>
+        </tr>
+        <tr>
+          <td><strong>USADA / UKAD</strong></td>
+          <td>USA 🇺🇸 / UK 🇬🇧</td>
+          <td>Intelligence artificielle pour le ciblage des contrôles inopinés hors compétition. Moteurs de recherche connectés aux bases de données pharmaceutiques nationales en direct.</td>
+          <td>L'IA peut optimiser le ciblage ; la base pharmacopée locale connectée est un prérequis immédiat pour l'ONADS.</td>
+        </tr>
+        <tr>
+          <td><strong>ADAK</strong></td>
+          <td>Kenya 🇰🇪</td>
+          <td>Pionnier africain : base d'alerte SMS et mobile pour le suivi des athlètes d'élite sur les hauts plateaux, validant la viabilité des solutions adaptées aux infrastructures réseau mobiles en Afrique.</td>
+          <td>Preuve de concept directement transposable : le Mobile-First fonctionne sur le continent avec des résultats probants.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-gold">
+      <div class="callout-title">📌 Positionnement Cible de l'ONADS</div>
+      <p>L'ONADS doit se positionner sur ce segment de référence mondial. La solution Dëgg-Sport 4-in-1 pallie le manque de personnel permanent par une <strong>automatisation rigoureuse des tâches de contrôle et de conformité</strong>, à coût maîtrisé et en totale adéquation avec les réalités d'infrastructure du territoire sénégalais.</p>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 3: ARCHITECTURE SOLUTION ====== -->
+  <div class="section page-break">
+    <div class="section-number">Section 03</div>
+    <h2 class="section-title">Architecture Solution &amp; Spécifications Fonctionnelles</h2>
+    <p class="section-subtitle">Les quatre modules clés de la Super-App Dëgg-Sport — Application unique à cloisons de sécurité étanches</p>
+
+    <p>La Super-App ONADS Dëgg-Sport repose sur un principe d'<strong>application unique mais à cloisons de sécurité étanches</strong>. Aucun téléchargement n'est requis sur les stores officiels (Play Store / App Store) pour le volet public : l'accès s'effectue via une Progressive Web App (PWA) d'une légèreté optimale, chargeable via un QR code présent sur les licences sportives.</p>
+
+    <div class="subsection-title">Les Quatre Modules Clés</div>
+
+    <div class="modules-grid">
+      <div class="modules-row">
+        <div class="module-card">
+          <div class="module-number">01</div>
+          <div class="module-tag module-tag-blue">Prévention</div>
+          <div class="module-title">Moteur de Prévention &amp; Vérification de Médicaments</div>
+          <div class="module-desc">
+            <p style="margin:0 0 10px; font-size:12px;">L'athlète ou le staff médical saisit le nom commercial d'un médicament vendu en officine au Sénégal. L'application interroge la base croisée de la DPM et la liste officielle AMA.</p>
+            <strong style="font-size:11px; color:#0F2C59; font-family:'Montserrat',sans-serif;">Fonctionnalités clés :</strong>
+            <ul style="margin-top:8px; padding-left:16px; font-size:12px;">
+              <li>Code couleur binaire immédiat : <span style="color:#00A86B; font-weight:700;">Vert = Autorisé</span> / <span style="color:#DC2626; font-weight:700;">Rouge = Interdit</span></li>
+              <li>Alertes sonores multilingues (Français / Wolof)</li>
+              <li>Capsules vidéo explicatives sur les compléments non homologués</li>
+            </ul>
+          </div>
+        </div>
+        <div class="module-card">
+          <div class="module-number">02</div>
+          <div class="module-tag module-tag-teal">Contrôle Terrain</div>
+          <div class="module-title">Digitalisation des Contrôles Terrain — Espace Inspecteurs Sécurisé</div>
+          <div class="module-desc">
+            <p style="margin:0 0 10px; font-size:12px;">L'Agent de Contrôle du Dopage (ACD) accède après double authentification biométrique ou OTP. L'algorithme guide étape par étape, signature tactile de l'athlète figée juridiquement.</p>
+            <strong style="font-size:11px; color:#0F2C59; font-family:'Montserrat',sans-serif;">Architecture Offline-First :</strong>
+            <ul style="margin-top:8px; padding-left:16px; font-size:12px;">
+              <li>Données chiffrées localement (arènes et stades régionaux)</li>
+              <li>Synchronisation automatique dès retour du signal 4G</li>
+              <li>Horodatage sécurisé interne infalsifiable</li>
+            </ul>
+          </div>
+        </div>
+        <div class="module-card">
+          <div class="module-number">03</div>
+          <div class="module-tag module-tag-green">AUT</div>
+          <div class="module-title">Portail de Demandes d'Autorisation d'Usage Thérapeutique</div>
+          <div class="module-desc">
+            <p style="margin:0 0 10px; font-size:12px;">Téléversement direct des dossiers médicaux (PDF ou photo). Notification en temps réel de la Commission Médicale Spécialisée de l'ONADS.</p>
+            <strong style="font-size:11px; color:#0F2C59; font-family:'Montserrat',sans-serif;">Délai de décision :</strong>
+            <ul style="margin-top:8px; padding-left:16px; font-size:12px;">
+              <li>De plusieurs semaines → <strong style="color:#00A86B;">moins de 48 heures</strong></li>
+              <li>Certificat AUT doté d'un QR code infalsifiable</li>
+              <li>Validation à distance par notation numérique</li>
+            </ul>
+          </div>
+        </div>
+        <div class="module-card">
+          <div class="module-number">04</div>
+          <div class="module-tag module-tag-gold">Signalement</div>
+          <div class="module-title">Canal de Signalement Sécurisé &amp; Anonyme — Drop-In</div>
+          <div class="module-desc">
+            <p style="margin:0 0 10px; font-size:12px;">Destiné au public, aux préparateurs physiques ou aux lanceurs d'alerte souhaitant dénoncer des réseaux de trafic de produits dopants.</p>
+            <strong style="font-size:11px; color:#0F2C59; font-family:'Montserrat',sans-serif;">Protection absolue :</strong>
+            <ul style="margin-top:8px; padding-left:16px; font-size:12px;">
+              <li>Destruction de l'adresse IP source à l'entrée</li>
+              <li>Zéro stockage de métadonnées d'appareil</li>
+              <li>Notes vocales anonymes ou photos cryptées</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 4: MODÈLE ÉCONOMIQUE ====== -->
+  <div class="section page-break">
+    <div class="section-number">Section 04</div>
+    <h2 class="section-title">Modèle Économique &amp; Viabilité Financière</h2>
+    <p class="section-subtitle">Business &amp; Funding Model — Architecture hybride de financement et d'exploitation</p>
+
+    <p>Le déploiement et la maintenance d'une infrastructure d'État exigent un modèle financier robuste qui ne pèse pas exclusivement sur le budget de fonctionnement de l'ONADS. Le cabinet préconise un <strong>modèle d'exploitation hybride à trois piliers</strong> complémentaires et non concurrents.</p>
+
+    <div class="funding-grid">
+      <div class="funding-row">
+        <div class="funding-card funding-card-g2g">
+          <div class="funding-card-label">Pilier 01 — Public</div>
+          <div class="funding-card-title">Financement G2G<br>Government-to-Government</div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Captation des fonds internationaux liés à l'« Héritage Technologique et Sanitaire » des JOJ Dakar 2026</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Enveloppes d'assistance technique du CIO et de l'AMA pour les nations hôtes</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Budget de modernisation du Ministère des Sports du Sénégal</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Subventions CNOSS et fonds de l'héritage olympique</div>
+          </div>
+        </div>
+        <div class="funding-card funding-card-b2b">
+          <div class="funding-card-label">Pilier 02 — B2B</div>
+          <div class="funding-card-title">Redevance B2B<br>Sport Propre</div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Abonnements annuels « Pack Conformité » pour les grandes académies privées (football, omnisports)</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Licences pour les structures professionnelles majeures (écuries de lutte haut de gamme)</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Valorisation du label de formation internationale et sécurisation des transferts de joueurs</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Packs Conformité pour Fédérations Professionnelles (FSF, FSBB, CNG)</div>
+          </div>
+        </div>
+        <div class="funding-card funding-card-ppp">
+          <div class="funding-card-label">Pilier 03 — PPP</div>
+          <div class="funding-card-title">Partenariat<br>Public-Privé</div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Sponsoring éthique des grands répartiteurs et grossistes pharmaceutiques opérant au Sénégal</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Parrainage du module de recherche de médicaments, associant la marque à une démarche de santé publique</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Transmission de statistiques anonymisées à la DPM sur les tendances de consommation de substances</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-bullet">▸</div>
+            <div class="funding-text">Alerte précoce sur l'essor de la consommation détournée de certains sirops ou antalgiques</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 5: FEUILLE DE ROUTE ====== -->
+  <div class="section page-break">
+    <div class="section-number">Section 05</div>
+    <h2 class="section-title">Feuille de Route &amp; Gouvernance</h2>
+    <p class="section-subtitle">Roadmap &amp; Implementation — Matrice des parties prenantes, RACI et planning d'implémentation en 3 vagues</p>
+
+    <div class="subsection-title">5.1 — Matrice de Mendelos : Pouvoir / Intérêt des Parties Prenantes</div>
+
+    <div class="stakeholder-grid">
+      <div class="stakeholder-row">
+        <div class="stakeholder-cell">
+          <span class="stakeholder-zone zone-high-high">Pouvoir Élevé / Intérêt Élevé</span>
+          <div class="stakeholder-cell-title" style="color: var(--blue);">À MANAGER DE TRÈS PRÈS</div>
+          <ul>
+            <li><strong>Ministère de la Jeunesse et des Sports</strong> — valide les budgets et porte l'évaluation politique</li>
+            <li><strong>Conseil d'Administration de l'ONADS</strong> — autorité institutionnelle du projet</li>
+            <li><strong>CNOSS</strong> — arbitre des financements sportifs nationaux</li>
+          </ul>
+        </div>
+        <div class="stakeholder-cell">
+          <span class="stakeholder-zone zone-high-low">Pouvoir Élevé / Intérêt Faible</span>
+          <div class="stakeholder-cell-title" style="color: var(--blue-mid);">À MAINTENIR SATISFAITS</div>
+          <ul>
+            <li><strong>CNG de Lutte</strong> — autorité sur les athlètes, perçoit initialement le contrôle comme contrainte</li>
+            <li><strong>FSF, FSBB</strong> et grandes fédérations — l'application doit leur simplifier la vie administrative</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stakeholder-row">
+        <div class="stakeholder-cell">
+          <span class="stakeholder-zone zone-low-high">Pouvoir Faible / Intérêt Élevé</span>
+          <div class="stakeholder-cell-title" style="color: var(--green);">À MAINTENIR INFORMÉS</div>
+          <ul>
+            <li><strong>Médecins d'équipes</strong> — utilisateurs quotidiens de l'outil</li>
+            <li><strong>Experts bénévoles ONADS</strong> — garants de la remontée des bugs et de la validation fonctionnelle</li>
+            <li><strong>Corps arbitral sportif</strong> — utilisateurs de référence des PV numériques</li>
+          </ul>
+        </div>
+        <div class="stakeholder-cell">
+          <span class="stakeholder-zone zone-low-low">Pouvoir Faible / Intérêt Faible</span>
+          <div class="stakeholder-cell-title" style="color: var(--text-muted);">EFFORT MINIMUM</div>
+          <ul>
+            <li><strong>Grand public et supporters</strong> — ciblés uniquement par la communication descendante</li>
+            <li>Accès limité au module de signalement anonyme en façade publique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-title">5.2 — Matrice RACI du Projet</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Phases / Livrables Clés</th>
+          <th>ONADS (Direction)</th>
+          <th>Équipe Tech / Consultant</th>
+          <th>Commission Médicale</th>
+          <th>Fédérations Sportives</th>
+          <th>Ministère des Sports</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Conception UX &amp; Storyboard</strong></td>
+          <td><span class="badge badge-A">A</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-C">C</span></td>
+          <td><span class="badge badge-I">I</span></td>
+          <td><span class="badge badge-I">I</span></td>
+        </tr>
+        <tr>
+          <td><strong>Connexion Bases Médicaments (DPM / AMA)</strong></td>
+          <td><span class="badge badge-A">A</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-I">I</span></td>
+          <td><span class="badge badge-C">C</span></td>
+        </tr>
+        <tr>
+          <td><strong>Développement Module Contrôle Terrain</strong></td>
+          <td><span class="badge badge-A">A</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-C">C</span></td>
+          <td><span class="badge badge-I">I</span></td>
+          <td><span class="badge badge-I">I</span></td>
+        </tr>
+        <tr>
+          <td><strong>Recette, Sécurité (CDP) &amp; Chiffrement</strong></td>
+          <td><span class="badge badge-A">A</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-C">C</span></td>
+          <td><span class="badge badge-I">I</span></td>
+          <td><span class="badge badge-C">C</span></td>
+        </tr>
+        <tr>
+          <td><strong>Déploiement &amp; Formation Acteurs</strong></td>
+          <td><span class="badge badge-A">A</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-I">I</span></td>
+          <td><span class="badge badge-R">R</span></td>
+          <td><span class="badge badge-I">I</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="raci-legend">
+      <div class="raci-legend-item"><span class="badge badge-R" style="margin-right:6px;">R</span> Responsible — Réalise</div>
+      <div class="raci-legend-item" style="padding-left:20px;"><span class="badge badge-A" style="margin-right:6px;">A</span> Accountable — Approuve et assume</div>
+      <div class="raci-legend-item" style="padding-left:20px;"><span class="badge badge-C" style="margin-right:6px;">C</span> Consulted — Consulté</div>
+      <div class="raci-legend-item" style="padding-left:20px;"><span class="badge badge-I" style="margin-right:6px;">I</span> Informed — Informé</div>
+    </div>
+
+    <div class="subsection-title">5.3 — Planning Macro d'Implémentation : Méthodologie MVP en 3 Vagues</div>
+
+    <div class="roadmap-container">
+      <div class="roadmap-track">
+        <div class="roadmap-phase">
+          <div class="roadmap-header">
+            <div class="roadmap-phase-num">1</div>
+            <div class="roadmap-phase-label">Mois 1 — Mois 3</div>
+            <div class="roadmap-phase-title">Cadrage &amp; MVP Prévention</div>
+          </div>
+          <div class="roadmap-body">
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Finalisation du design d'interface UX et architecture technique</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Intégration de la base de données médicaments locale (DPM)</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Déploiement de la PWA grand public — <strong>Module 1 (Prévention)</strong></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Mise en ligne du <strong>Module 4 (Signalement Anonyme)</strong></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Tests de sécurité CDP et première revue de conformité AMA</div>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="roadmap-header">
+            <div class="roadmap-phase-num">2</div>
+            <div class="roadmap-phase-label">Mois 4 — Mois 6</div>
+            <div class="roadmap-phase-title">MVP Opérationnel &amp; Contrôles</div>
+          </div>
+          <div class="roadmap-body">
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Développement du <strong>Module 2 (Contrôle Terrain)</strong> avec protocole Offline-First</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Intégration de la signature numérique juridiquement valide</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Sessions pilotes lors des grands combats de lutte et du championnat national de football</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Formation initiale des Agents de Contrôle du Dopage (ACD)</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Feedback terrain et itérations correctrices</div>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="roadmap-header">
+            <div class="roadmap-phase-num">3</div>
+            <div class="roadmap-phase-label">Mois 7 — Mois 9</div>
+            <div class="roadmap-phase-title">Intégration Finale &amp; Homologation JOJ</div>
+          </div>
+          <div class="roadmap-body">
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Déploiement du <strong>Module 3 (Portail AUT)</strong> complet</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Audits de sécurité informatique en liaison avec l'AMA et la CDP</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Formation globale des experts bénévoles des commissions ONADS</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Homologation officielle et certification pour les JOJ Dakar 2026</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+              <div class="roadmap-item-text">Lancement opérationnel national — Déploiement de Dakar à Ziguinchor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 6: GESTION DES RISQUES ====== -->
+  <div class="section page-break">
+    <div class="section-number">Section 06</div>
+    <h2 class="section-title">Gestion des Risques &amp; Facteurs Clés de Succès</h2>
+    <p class="section-subtitle">L'activité antidopage est intrinsèquement liée au contentieux juridique de haut niveau. Une faille technique équivaut à un vice de procédure.</p>
+
+    <div class="callout callout-red">
+      <div class="callout-title">⚖ Axiome Juridique Fondamental</div>
+      <p>Une faille technique dans le système de contrôle équivaut à un <strong>vice de procédure</strong> permettant l'annulation de sanctions prononcées à l'encontre d'athlètes tricheurs. La sécurisation du système n'est pas une option : c'est l'objet même de la mission.</p>
+    </div>
+
+    <div class="subsection-title">6.1 — Analyse AMDEC : Modes de Défaillance, Effets et Criticité</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Mode de Défaillance</th>
+          <th>Effet Identifié</th>
+          <th>Criticité</th>
+          <th>Action Corrective Déployée</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Coupure totale du réseau 4G</strong> lors de la saisie d'un échantillon dans un vestiaire isolé</td>
+          <td>Perte des données, impossibilité de valider l'heure légale de notification, risque d'annulation de la procédure pour vice de forme</td>
+          <td><span class="pill pill-high">Élevée</span></td>
+          <td><strong>Architecture Offline-First</strong> — Mécanisme PouchDB/CouchDB. Bases locales synchronisées en tâche de fond dès détection du réseau, avec horodatage sécurisé interne infalsifiable.</td>
+        </tr>
+        <tr>
+          <td><strong>Fuite ou accès non autorisé</strong> à l'identité d'un lanceur d'alerte</td>
+          <td>Rupture de confiance, menaces physiques ou pressions sociales sur le témoin au sein de l'écurie ou du club, responsabilité pénale engagée pour l'ONADS</td>
+          <td><span class="pill pill-max">Maximale</span></td>
+          <td><strong>Protocole asymétrique sans logs</strong> — Routage du Module 4 via protocole de chiffrement asymétrique. Suppression automatique immédiate de l'adresse IP de l'expéditeur dès l'entrée dans le coffre-fort numérique ONADS.</td>
+        </tr>
+        <tr>
+          <td><strong>Contestation juridique</strong> de la validité de la signature tactile sur smartphone</td>
+          <td>Invalidité du PV de contrôle devant le Tribunal Arbitral du Sport (TAS), annulation de la sanction disciplinaire</td>
+          <td><span class="pill pill-high">Élevée</span></td>
+          <td><strong>Certificat électronique lié au terminal agréé</strong> — Intégration d'un certificat d'authentification couplé à une double validation OTP envoyé sur le numéro certifié du manager de l'athlète présent lors du contrôle.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="subsection-title">6.2 — Diagramme d'Ishikawa : Les 5M de la Sécurisation Antidopage</div>
+    <p style="font-size:12.5px; color: var(--text-muted); margin-bottom: 16px; font-style: italic;">Pour atteindre l'objectif réglementaire de « Zéro Vice de Procédure », les causes de défaillances actuelles résolues par l'application sont cartographiées selon les 5 leviers :</p>
+
+    <div class="ishikawa-container">
+      <div class="ishikawa-title">Diagramme d'Ishikawa — Causes de Défaillance &amp; Résolutions Dëgg-Sport</div>
+
+      <svg class="ishikawa-svg" viewBox="0 0 960 480" xmlns="http://www.w3.org/2000/svg" font-family="'Open Sans', sans-serif">
+
+        <!-- Main spine -->
+        <line x1="80" y1="240" x2="820" y2="240" stroke="#0F2C59" stroke-width="3"/>
+
+        <!-- Effect box (right) -->
+        <rect x="820" y="190" width="130" height="100" rx="6" fill="#0F2C59"/>
+        <text x="885" y="225" text-anchor="middle" fill="#FFB800" font-weight="800" font-size="11" font-family="'Montserrat',sans-serif" letter-spacing="0.5">OBJECTIF</text>
+        <text x="885" y="244" text-anchor="middle" fill="white" font-weight="700" font-size="12" font-family="'Montserrat',sans-serif">ZÉRO VICE</text>
+        <text x="885" y="262" text-anchor="middle" fill="white" font-weight="700" font-size="12" font-family="'Montserrat',sans-serif">DE PROCÉDURE</text>
+
+        <!-- Arrow head -->
+        <polygon points="820,233 800,224 800,248" fill="#0F2C59"/>
+
+        <!-- Start cap -->
+        <circle cx="80" cy="240" r="8" fill="#0F2C59"/>
+
+        <!-- ── BONE 1: MATÉRIEL (top-left, anchor ~200) -->
+        <line x1="200" y1="100" x2="340" y2="240" stroke="#0F2C59" stroke-width="2"/>
+        <rect x="90" y="60" width="230" height="70" rx="6" fill="#E8EEF7" stroke="#0F2C59" stroke-width="1.5"/>
+        <text x="205" y="85" text-anchor="middle" fill="#0F2C59" font-weight="800" font-size="12" font-family="'Montserrat',sans-serif">MATÉRIEL</text>
+        <text x="205" y="102" text-anchor="middle" fill="#1E293B" font-size="10">Formulaires papier illisibles,</text>
+        <text x="205" y="116" text-anchor="middle" fill="#1E293B" font-size="10">falsifiables → Tablettes sécurisées</text>
+
+        <!-- ── BONE 2: MAIN D'ŒUVRE (top, anchor ~420) -->
+        <line x1="460" y1="100" x2="460" y2="240" stroke="#0F2C59" stroke-width="2"/>
+        <rect x="340" y="25" width="240" height="76" rx="6" fill="#E6F7F1" stroke="#00A86B" stroke-width="1.5"/>
+        <text x="460" y="50" text-anchor="middle" fill="#00A86B" font-weight="800" font-size="12" font-family="'Montserrat',sans-serif">MAIN D'ŒUVRE</text>
+        <text x="460" y="67" text-anchor="middle" fill="#1E293B" font-size="10">Formation continue + guidage</text>
+        <text x="460" y="81" text-anchor="middle" fill="#1E293B" font-size="10">algorithmique des ACD bénévoles</text>
+        <text x="460" y="95" text-anchor="middle" fill="#1E293B" font-size="10">→ Zéro erreur d'omission</text>
+
+        <!-- ── BONE 3: MÉTHODE (top-right, anchor ~640) -->
+        <line x1="680" y1="100" x2="580" y2="240" stroke="#0F2C59" stroke-width="2"/>
+        <rect x="660" y="30" width="240" height="70" rx="6" fill="#FFF8E1" stroke="#FFB800" stroke-width="1.5"/>
+        <text x="780" y="55" text-anchor="middle" fill="#92400E" font-weight="800" font-size="12" font-family="'Montserrat',sans-serif">MÉTHODE</text>
+        <text x="780" y="72" text-anchor="middle" fill="#1E293B" font-size="10">Uniformisation nationale du protocole</text>
+        <text x="780" y="86" text-anchor="middle" fill="#1E293B" font-size="10">de Dakar à Ziguinchor</text>
+
+        <!-- ── BONE 4: MILIEU (bottom-left, anchor ~280) -->
+        <line x1="280" y1="380" x2="360" y2="240" stroke="#0F2C59" stroke-width="2"/>
+        <rect x="70" y="345" width="250" height="80" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="195" y="372" text-anchor="middle" fill="#DC2626" font-weight="800" font-size="12" font-family="'Montserrat',sans-serif">MILIEU</text>
+        <text x="195" y="389" text-anchor="middle" fill="#1E293B" font-size="10">Sanctuarisation du vestiaire,</text>
+        <text x="195" y="403" text-anchor="middle" fill="#1E293B" font-size="10">minutage strict des interventions,</text>
+        <text x="195" y="417" text-anchor="middle" fill="#1E293B" font-size="10">documentation des refus de prélèvement</text>
+
+        <!-- ── BONE 5: MATÉRIAU/DONNÉES (bottom-right, anchor ~600) -->
+        <line x1="600" y1="380" x2="540" y2="240" stroke="#0F2C59" stroke-width="2"/>
+        <rect x="570" y="345" width="280" height="80" rx="6" fill="#E0F2FE" stroke="#0891B2" stroke-width="1.5"/>
+        <text x="710" y="372" text-anchor="middle" fill="#0891B2" font-weight="800" font-size="12" font-family="'Montserrat',sans-serif">MATÉRIAU — DONNÉES</text>
+        <text x="710" y="389" text-anchor="middle" fill="#1E293B" font-size="10">Interconnexion ADAMS (AMA),</text>
+        <text x="710" y="403" text-anchor="middle" fill="#1E293B" font-size="10">fiabilisation des flux, accès sécurisé</text>
+        <text x="710" y="417" text-anchor="middle" fill="#1E293B" font-size="10">aux AUT approuvées en temps réel</text>
+
+        <!-- Junction dots on spine -->
+        <circle cx="340" cy="240" r="5" fill="#FFB800"/>
+        <circle cx="460" cy="240" r="5" fill="#00A86B"/>
+        <circle cx="580" cy="240" r="5" fill="#92400E"/>
+        <circle cx="360" cy="240" r="5" fill="#DC2626"/>
+        <circle cx="540" cy="240" r="5" fill="#0891B2"/>
+
+      </svg>
+    </div>
+  </div>
+
+  <!-- ====== CONCLUSION ====== -->
+  <div class="section">
+    <div class="section-number">Conclusion</div>
+    <h2 class="section-title">Prochaines Étapes &amp; Vision</h2>
+    <p class="section-subtitle">Vers une infrastructure de souveraineté sanitaire et sportive nationale</p>
+
+    <div class="highlight-box">
+      <div class="highlight-box-title">🌍 Une Infrastructure de Souveraineté Nationale</div>
+      <p>Cette proposition de projet stratégique ne constitue pas uniquement un outil informatique : elle dote le <strong>Sénégal d'une infrastructure de souveraineté sanitaire et sportive</strong>. En déployant la Super-App ONADS Dëgg-Sport, l'institution s'assure d'une maîtrise totale de ses processus, rationalise l'activité de ses experts bénévoles, protège la santé de sa jeunesse et s'aligne de façon indiscutable avec les exigences de l'élite mondiale à l'aube des JOJ Dakar 2026.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="two-col-left">
+        <div class="callout callout-green">
+          <div class="callout-title">✅ Phase 1 — Démarrage Immédiat</div>
+          <p>Le cabinet Syness est à la disposition du Comité de Direction de l'ONADS pour entamer la <strong>Phase 1 de co-conception UX</strong> et lancer la rédaction du cahier des charges fonctionnel détaillé dès validation de ce document.</p>
+        </div>
+      </div>
+      <div class="two-col-right">
+        <div class="callout callout-blue">
+          <div class="callout-title">📋 Livrables Phase 1 Attendus</div>
+          <p>Wireframes interactifs des 4 modules, Cahier des Charges Fonctionnel Détaillé, Plan de contractualisation DPM / AMA, Dossier de demande de financement JOJ 2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Action Immédiate</th>
+          <th>Responsable</th>
+          <th>Délai</th>
+          <th>Livrable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Validation du présent document et accord de principe</td>
+          <td>Direction ONADS &amp; CA</td>
+          <td>J+7</td>
+          <td>Décision formelle signée</td>
+        </tr>
+        <tr>
+          <td>Kickoff Meeting de co-conception UX</td>
+          <td>Syness + ONADS + Commission Médicale</td>
+          <td>J+15</td>
+          <td>Compte-rendu de lancement</td>
+        </tr>
+        <tr>
+          <td>Initiation des démarches DPM pour accès base médicaments</td>
+          <td>Direction ONADS</td>
+          <td>J+21</td>
+          <td>Convention de partenariat DPM</td>
+        </tr>
+        <tr>
+          <td>Dépôt dossier financement Héritage JOJ auprès du CIO / AMA</td>
+          <td>ONADS + Ministère des Sports</td>
+          <td>J+30</td>
+          <td>Dossier de demande complet</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <div class="doc-footer-left">
+      <p style="color: rgba(255,255,255,0.8); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Syness — Conseil Stratégique &amp; Transformation Digitale</p>
+      <p>Document Confidentiel — Propriété exclusive de Syness et de l'ONADS. Toute reproduction interdite.</p>
+      <p>Référence : SYNESS / ONADS / 2026 — JOJ Dakar — V1.0</p>
+      <div class="footer-contacts">
+        📞 +221 77 337 61 83 &nbsp;&nbsp;✉️ massamba@syness.sn &nbsp;&nbsp;🌐 www.syness.sn
+      </div>
+    </div>
+    <div class="doc-footer-right">
+      <p style="color: rgba(255,255,255,0.8); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Projet Dëgg-Sport</p>
+      <p>Super-App 4-in-1 — ONADS Sénégal</p>
+      <p style="color: var(--gold);">JOJ Dakar 2026</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
